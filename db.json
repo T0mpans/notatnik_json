@@ -1,0 +1,15 @@
+[
+    {
+      "tytul":"notatka1"
+      "tresc":"sprawdzam czy pierwsza notatka działa",
+      "data":"05.10.2026"
+    },{
+      "tytul":"notatka2"
+      "tresc":"DRUGA NOTATKA",
+      "data":"06.10.2026"
+    },{
+      "tytul":"NOTATKA3"
+      "tresc":"akslfdasdfa",
+      "data":"07.10.2026"
+    }
+]
