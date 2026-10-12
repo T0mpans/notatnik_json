@@ -7,9 +7,9 @@ public class Waluta {
     @SerializedName("kraj")
     private String kraj;
     @SerializedName("wartosc")
-    private float wartoscWaluty;
+    private double wartoscWaluty;
 
-    public Waluta(String nazwaWaluty, String kraj, float wartoscWaluty) {
+    public Waluta(String nazwaWaluty, String kraj, double wartoscWaluty) {
         this.nazwaWaluty = nazwaWaluty;
         this.kraj = kraj;
         this.wartoscWaluty = wartoscWaluty;
@@ -31,11 +31,11 @@ public class Waluta {
         this.kraj = kraj;
     }
 
-    public float getWartoscWaluty() {
+    public double getWartoscWaluty() {
         return wartoscWaluty;
     }
 
-    public void setWartoscWaluty(float wartoscWaluty) {
+    public void setWartoscWaluty(double wartoscWaluty) {
         this.wartoscWaluty = wartoscWaluty;
     }
 }
