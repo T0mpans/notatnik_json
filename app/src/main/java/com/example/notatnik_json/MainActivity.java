@@ -2,7 +2,10 @@ package com.example.notatnik_json;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -20,6 +23,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     ListView listaWalut;
+    EditText iloscPieniedzy;
+    TextView wynik;
+    Button przyciskOblicz;
     List<Waluta> walutyZPliku;
 
     @Override
@@ -29,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listaWalut = findViewById(R.id.listView);
+        iloscPieniedzy = findViewById(R.id.editTextIloscPieniedzy);
+        wynik = findViewById(R.id.textViewWynik);
+        przyciskOblicz = findViewById(R.id.button);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://raw.githubusercontent.com/T0mpans/plikjson_do_notatnika/main/")
@@ -74,11 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Waluta>> call, Throwable t) {
-                Toast.makeText(
-                        MainActivity.this,
-                        "Błąd połączenia: " + t.getMessage(),
-                        Toast.LENGTH_LONG
-                ).show();
+
             }
         });
     }
