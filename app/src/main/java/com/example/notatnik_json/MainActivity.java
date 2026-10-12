@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listaWalut = findViewById(R.id.listView);
+        //dfasfsafd
 
         //url do jsona: "https://raw.githubusercontent.com/T0mpans/plikjson_do_notatnika/main/db.json";
     }
