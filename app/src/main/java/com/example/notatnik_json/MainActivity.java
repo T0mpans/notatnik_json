@@ -16,6 +16,6 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        //url do jsona: "https://raw.githubusercontent.com/T0mpans/plikjson_do_notatnika/main/db.json"
+        //url do jsona: "https://raw.githubusercontent.com/T0mpans/plikjson_do_notatnika/main/db.json";
     }
 }
