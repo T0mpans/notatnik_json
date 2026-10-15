@@ -1,6 +1,7 @@
 package com.example.notatnik_json;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -69,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                     elementyListy.add("Nazwa: " + waluta.getNazwaWaluty());
                     elementyListy.add("Kraj: " + waluta.getKraj());
                     elementyListy.add("Wartość: " + waluta.getWartoscWaluty());
-                    elementyListy.add("=======================================");
                 }
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -79,6 +79,36 @@ public class MainActivity extends AppCompatActivity {
                 );
 
                 listaWalut.setAdapter(adapter);
+
+                przyciskOblicz.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                String podanaIloscPieniedzy = iloscPieniedzy.getText().toString();
+                                int podanaIloscPieniedzyInt = Integer.parseInt(podanaIloscPieniedzy);
+
+                                StringBuilder tekstWyniku = new StringBuilder();
+                                for (Waluta waluta : walutyZPliku) {
+
+                                    String nazwa2 = waluta.getNazwaWaluty();
+                                    double wartosc = waluta.getWartoscWaluty();
+
+                                    double wynikObliczenia =
+                                            podanaIloscPieniedzyInt * wartosc;
+
+                                    tekstWyniku.append(nazwa2)
+                                            .append(": ")
+                                            .append(String.format(
+                                                    java.util.Locale.getDefault(),
+                                                    "%.2f",
+                                                    wynikObliczenia
+                                            ))
+                                            .append("\n");
+                                }
+                                wynik.setText(tekstWyniku.toString());
+                            }
+                        }
+                );
             }
 
             @Override
