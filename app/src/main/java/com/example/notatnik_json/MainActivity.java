@@ -87,25 +87,20 @@ public class MainActivity extends AppCompatActivity {
                                 String podanaIloscPieniedzy = iloscPieniedzy.getText().toString();
                                 int podanaIloscPieniedzyInt = Integer.parseInt(podanaIloscPieniedzy);
 
-                                StringBuilder tekstWyniku = new StringBuilder();
-                                for (Waluta waluta : walutyZPliku) {
+                                String tekstWyniku = "";
 
+                                for (Waluta waluta : walutyZPliku) {
                                     String nazwa2 = waluta.getNazwaWaluty();
                                     double wartosc = waluta.getWartoscWaluty();
 
-                                    double wynikObliczenia =
-                                            podanaIloscPieniedzyInt * wartosc;
+                                    double wynikObliczenia = podanaIloscPieniedzyInt * wartosc;
 
-                                    tekstWyniku.append(nazwa2)
-                                            .append(": ")
-                                            .append(String.format(
-                                                    java.util.Locale.getDefault(),
-                                                    "%.2f",
-                                                    wynikObliczenia
-                                            ))
-                                            .append("\n");
+                                    tekstWyniku += nazwa2 + ": "
+                                            + String.format(java.util.Locale.getDefault(),  "%.2f", wynikObliczenia)
+                                            + "\n";
                                 }
-                                wynik.setText(tekstWyniku.toString());
+
+                                wynik.setText(tekstWyniku);
                             }
                         }
                 );
