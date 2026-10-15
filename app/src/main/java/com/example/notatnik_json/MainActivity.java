@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         elementyListy
                 );
 
-                listaWalut.setAdapter(adapter);
+                //listaWalut.setAdapter(adapter);
 
                 przyciskOblicz.setOnClickListener(
                         new View.OnClickListener() {
@@ -95,9 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
                                     double wynikObliczenia = podanaIloscPieniedzyInt * wartosc;
 
-                                    tekstWyniku += nazwa2 + ": "
-                                            + String.format(java.util.Locale.getDefault(),  "%.2f", wynikObliczenia)
-                                            + "\n";
+                                    tekstWyniku += nazwa2 + ": " + wynikObliczenia + "\n";
                                 }
 
                                 wynik.setText(tekstWyniku);
