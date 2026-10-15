@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        listaWalut = findViewById(R.id.listView);
+        //listaWalut = findViewById(R.id.listView);
         iloscPieniedzy = findViewById(R.id.editTextIloscPieniedzy);
         wynik = findViewById(R.id.textViewWynik);
         przyciskOblicz = findViewById(R.id.button);
@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                                     tekstWyniku += nazwa2 + ": " + wynikObliczenia + "\n";
                                 }
 
+                                //wynik.setVisibility();
                                 wynik.setText(tekstWyniku);
                             }
                         }
